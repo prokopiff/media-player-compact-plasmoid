@@ -54,6 +54,7 @@ Item {
     property string playerIcon: ""
 
     property bool noPlayer: mpris2Source.sources.length <= 1
+    property bool playing: mpris2Source.data[mpris2Source.current].PlaybackStatus == "Playing"
 
     Plasmoid.switchWidth: units.gridUnit * 14
     Plasmoid.switchHeight: units.gridUnit * 10

@@ -69,12 +69,11 @@ MouseArea {
             Column {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                visible: !root.noPlayer
 
                 PlasmaComponents.Label {
                     id: song
                     width: parent.width
-                    opacity: 0.9
+                    opacity: root.playing ? 0.9 : 0.0
                     height: parent.height / 2
 
                     elide: Text.ElideRight
@@ -84,7 +83,7 @@ MouseArea {
                 PlasmaComponents.Label {
                     id: artist
                     width: parent.width
-                    opacity: 0.7
+                    opacity: root.playing ? 0.7 : 0.0
                     height: parent.height / 2
 
                     elide: Text.ElideRight
@@ -99,6 +98,7 @@ MouseArea {
 
                 PlasmaCore.IconItem {
                     source: "media-skip-backward"
+                    opacity: root.playing ? 1.0 : 0.0
                     width: expandedRepresentation.iconWidth
                     height: width
                     enabled: playerControls.enabled
@@ -131,6 +131,7 @@ MouseArea {
                 visible: !root.noPlayer
                 PlasmaCore.IconItem {
                     source: "media-skip-forward"
+                    opacity: root.playing ? 1.0 : 0.0
                     width: expandedRepresentation.iconWidth
                     height: width
                     enabled: playerControls.enabled
