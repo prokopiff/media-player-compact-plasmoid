@@ -65,15 +65,18 @@ MouseArea {
         RowLayout {
             width: parent.width
             height: parent.height
+            spacing: 5
 
             Column {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+                Layout.rightMargin: 20
 
                 PlasmaComponents.Label {
                     id: song
                     width: parent.width
                     opacity: root.playing ? 0.9 : 0.0
+                    horizontalAlignment: Text.AlignRight
                     height: parent.height / 2
 
                     elide: Text.ElideRight
@@ -83,6 +86,7 @@ MouseArea {
                 PlasmaComponents.Label {
                     id: artist
                     width: parent.width
+                    horizontalAlignment: Text.AlignRight
                     opacity: root.playing ? 0.7 : 0.0
                     height: parent.height / 2
 
